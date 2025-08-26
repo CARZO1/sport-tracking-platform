@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Premier League – Live Ladder</title>
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+  <header class="page-header">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="" class="pl-badge">
+    <h1>Premier League</h1>
+    <nav><a class="active">Table</a><a>Matches</a><a>Stats</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <div>
+        <label>Season:</label>
+        <span id="seasonBadge">2025–26</span>
+      </div>
+      <div id="liveChip" class="chip">LIVE</div>
+    </section>
+
+    <div class="card">
+      <table id="ladder" class="ladder">
+        <thead>
+          <tr>
+            <th class="col-rank">#</th>
+            <th class="col-club">Club</th>
+            <th>MP</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>GF</th>
+            <th>GA</th>
+            <th>GD</th>
+            <th>Pts</th>
+            <th>GIH</th>
+          </tr>
+        </thead>
+        <tbody id="ladderBody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+      <div id="updated" class="updated"></div>
+    </div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

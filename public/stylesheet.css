@@ -1,0 +1,49 @@
+/* Test comment */
+:root {
+  --bg: #0f1115;
+  --card: #161a22;
+  --muted: #9aa4b2;
+  --text: #e5e7eb;
+  --accent: #6ee7b7;
+  --chip: #22c55e;
+  --row-hover: #1d2330;
+  --border: #2a3241;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.4 system-ui, Segoe UI, Roboto, sans-serif; }
+
+.page-header {
+  display:flex; align-items:center; gap:14px; padding:16px 20px; border-bottom:1px solid var(--border);
+}
+.page-header h1 { font-size:22px; margin:0 12px 0 0; }
+.page-header nav a { margin-right:12px; color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px; }
+.page-header nav a.active { background:#1b2130; color:#fff; }
+
+.pl-badge { width:28px; height:28px; filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg); }
+
+.container { max-width:980px; margin:28px auto; padding:0 16px; }
+.toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; color:var(--muted); }
+.chip { background:var(--chip); color:#08130c; font-weight:700; padding:4px 10px; border-radius:999px; letter-spacing:.4px; }
+
+.card { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+
+.ladder { width:100%; border-collapse:collapse; }
+.ladder thead th { text-align:right; font-weight:600; color:var(--muted); padding:12px 10px; border-bottom:1px solid var(--border); }
+.ladder thead th.col-club, .ladder td.col-club { text-align:left; }
+.ladder thead th.col-rank, .ladder td.col-rank { text-align:center; width:38px; }
+
+.ladder tbody td { padding:10px; border-bottom:1px solid rgba(255,255,255,.04); text-align:right; }
+.ladder tbody tr:hover { background:var(--row-hover); }
+.club {
+  display:flex; align-items:center; gap:10px;
+}
+.club img { width:20px; height:20px; border-radius:50%; background:#fff; }
+.club .name { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:240px; }
+
+.rank { width:26px; height:26px; display:inline-grid; place-items:center; border-radius:50%; border:1px solid var(--border); font-weight:600; }
+.top4 .rank { border-color:#60a5fa; }
+.ucl  .rank { border-color:#60a5fa; }
+.europa .rank { border-color:#f59e0b; }
+.releg .rank { border-color:#ef4444; }
+
+.updated { padding:12px; color:var(--muted); font-size:13px; }

@@ -1,0 +1,6 @@
+# all these files will be ignored when pushing to git
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
