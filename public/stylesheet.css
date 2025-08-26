@@ -1,49 +1,157 @@
-/* Test comment */
+/* Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+}
+.page-header .pl-badge {
+  height: 48px;       /* keep the logo small */
+  width: auto;
+  opacity: .9;
+}
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* nav: inline links with spacing */
+.page-header nav {
+  margin-left: auto;          /* push nav to the right */
+  display: flex;
+  gap: 12px;
+}
+.page-header nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+.page-header nav a:hover {
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(255,255,255,.04);
+}
+.page-header nav a.active {
+  color: var(--text);
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+
+/* Toolbar (season badge + live chip) */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+.toolbar label { color: var(--muted); margin-right: 6px; }
+
+/* optional chip style if you keep #liveChip */
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 6px 10px; border-radius: 999px;
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line); font-weight: 600;
+}
+
+/* spacing around the table card */
+.table-wrap { margin-top: 8px; }
+.updated { padding: 12px 16px; color: var(--muted); }
+
+
 :root {
-  --bg: #0f1115;
-  --card: #161a22;
-  --muted: #9aa4b2;
+  --bg: #0b0f14;
+  --panel: #0f141b;
+  --panel-2: #111826;
   --text: #e5e7eb;
-  --accent: #6ee7b7;
-  --chip: #22c55e;
-  --row-hover: #1d2330;
-  --border: #2a3241;
+  --muted: #9aa4b2;
+  --line: rgba(255,255,255,.08);
+  --chip: #0f172a;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.4 system-ui, Segoe UI, Roboto, sans-serif; }
-
-.page-header {
-  display:flex; align-items:center; gap:14px; padding:16px 20px; border-bottom:1px solid var(--border);
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 }
-.page-header h1 { font-size:22px; margin:0 12px 0 0; }
-.page-header nav a { margin-right:12px; color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px; }
-.page-header nav a.active { background:#1b2130; color:#fff; }
 
-.pl-badge { width:28px; height:28px; filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg); }
+.container { max-width: 980px; margin: 40px auto; padding: 0 16px; }
+h1 { margin: 0 0 12px; font-size: 28px; font-weight: 700; }
+.subtitle { color: var(--muted); margin: 2px 0 16px; }
 
-.container { max-width:980px; margin:28px auto; padding:0 16px; }
-.toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; color:var(--muted); }
-.chip { background:var(--chip); color:#08130c; font-weight:700; padding:4px 10px; border-radius:999px; letter-spacing:.4px; }
-
-.card { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25); }
-
-.ladder { width:100%; border-collapse:collapse; }
-.ladder thead th { text-align:right; font-weight:600; color:var(--muted); padding:12px 10px; border-bottom:1px solid var(--border); }
-.ladder thead th.col-club, .ladder td.col-club { text-align:left; }
-.ladder thead th.col-rank, .ladder td.col-rank { text-align:center; width:38px; }
-
-.ladder tbody td { padding:10px; border-bottom:1px solid rgba(255,255,255,.04); text-align:right; }
-.ladder tbody tr:hover { background:var(--row-hover); }
-.club {
-  display:flex; align-items:center; gap:10px;
+/* Season badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border-radius: 999px;
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line);
+  font-weight: 600;
 }
-.club img { width:20px; height:20px; border-radius:50%; background:#fff; }
-.club .name { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:240px; }
+.badge small { color: var(--muted); font-weight: 500; }
 
-.rank { width:26px; height:26px; display:inline-grid; place-items:center; border-radius:50%; border:1px solid var(--border); font-weight:600; }
-.top4 .rank { border-color:#60a5fa; }
-.ucl  .rank { border-color:#60a5fa; }
-.europa .rank { border-color:#f59e0b; }
-.releg .rank { border-color:#ef4444; }
+/* Table */
+.table-wrap {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+thead th {
+  text-align: left;
+  padding: 14px 16px;
+  color: var(--muted);
+  background: rgba(255,255,255,.02);
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+tbody td {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+}
+tbody tr:hover { background: rgba(255,255,255,.02); }
 
-.updated { padding:12px; color:var(--muted); font-size:13px; }
+/* column sizing */
+.col-rank { width: 56px; }
+.col-club { min-width: 220px; }
+
+/* rank chip */
+.rank {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 9999px;
+  background: var(--chip); color: #cbd5e1; font-weight: 700;
+  border: 1px solid var(--line);
+}
+
+/* club cell */
+.club { display: flex; align-items: center; gap: .65rem; min-width: 0; }
+.club img.crest {
+  width: 26px; height: 26px; border-radius: 9999px;
+  background: #0e1116; padding: 4px;
+  object-fit: contain; vertical-align: middle;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset,
+              0 1px 3px rgba(0,0,0,.35);
+}
+.club .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* zones */
+tbody tr.ucl    { box-shadow: inset 2px 0 0 #22c55e; }
+tbody tr.europa { box-shadow: inset 2px 0 0 #eab308; }
+tbody tr.releg  { box-shadow: inset 2px 0 0 #ef4444; }
+
+/* footer row / message */
+.muted { color: var(--muted); }
+
+/* utility */
+.right { text-align: right; }
+strong { font-weight: 700; }

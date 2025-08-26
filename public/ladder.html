@@ -8,42 +8,46 @@
 </head>
 <body>
   <header class="page-header">
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="" class="pl-badge">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg"
+         alt="Premier League" class="pl-badge">
     <h1>Premier League</h1>
-    <nav><a class="active">Table</a><a>Matches</a><a>Stats</a></nav>
+    <nav aria-label="Primary">
+      <a class="active" href="#">Table</a>
+      <a href="#">Matches</a>
+      <a href="#">Stats</a>
+    </nav>
   </header>
 
   <main class="container">
     <section class="toolbar">
       <div>
         <label>Season:</label>
-        <span id="seasonBadge">2025–26</span>
+        <span id="seasonBadge" class="badge">2025–26</span>
       </div>
-      <div id="liveChip" class="chip">LIVE</div>
+      <div id="liveChip" class="badge" style="display:none">LIVE</div>
     </section>
 
-    <div class="card">
+    <div class="table-wrap">
       <table id="ladder" class="ladder">
         <thead>
           <tr>
-            <th class="col-rank">#</th>
-            <th class="col-club">Club</th>
-            <th>MP</th>
-            <th>W</th>
-            <th>D</th>
-            <th>L</th>
-            <th>GF</th>
-            <th>GA</th>
-            <th>GD</th>
-            <th>Pts</th>
-            <th>GIH</th>
+            <th class="col-rank" scope="col">#</th>
+            <th class="col-club" scope="col">Club</th>
+            <th scope="col">MP</th>
+            <th scope="col">W</th>
+            <th scope="col">D</th>
+            <th scope="col">L</th>
+            <th scope="col">GF</th>
+            <th scope="col">GA</th>
+            <th scope="col">GD</th>
+            <th scope="col">Pts</th>
           </tr>
         </thead>
-        <tbody id="ladderBody">
-          <!-- rows injected by JS -->
-        </tbody>
+        <tbody id="ladderBody"><!-- rows injected by JS --></tbody>
       </table>
-      <div id="updated" class="updated"></div>
+
+      <!-- aria-live so updates are announced to assistive tech -->
+      <div id="updated" class="updated" role="status" aria-live="polite"></div>
     </div>
   </main>
 

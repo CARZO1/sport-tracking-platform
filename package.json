@@ -2,25 +2,30 @@
   "name": "sport-tracking-platform",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Premier League tracking platform (Direct API-Football)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CARZO1/sport-tracking-platform.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "football",
+    "premier-league",
+    "api-football",
+    "sport-tracking"
+  ],
+  "author": "CARZO1",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CARZO1/sport-tracking-platform/issues"
   },
   "homepage": "https://github.com/CARZO1/sport-tracking-platform#readme",
   "dependencies": {
-    "express": "^5.1.0",
-    "node-fetch": "^3.3.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   }
 }
